@@ -1,0 +1,7 @@
+mtproxy (1.0-1) unstable; urgency=medium
+
+  Initial debianized release based on revision
+  ce9933813dd1473e8158b45abf38fa45cbd3b84c
+
+ -- Sergey Stolyarov <sergei@regolit.com>  Tue, 17 Sep 2019 21:55:15 +0700
+

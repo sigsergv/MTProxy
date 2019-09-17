@@ -1,0 +1,20 @@
+# Set mtproxy options here
+
+# listen port, single or range e.g.: 8001:8008
+LISTEN_PORT=8888
+
+# comma-separated list of client (HTTP) ports to listen
+HTTP_PORTS=30443
+
+# Secret
+SECRET=dead3ec4et
+
+# Proxy tag, value 762004a7338256f603697d740d067a93 is randomly generated and not a valid tag.
+#
+# You must obtain correct proxy tag via Telegram bot @MTProxybot
+PROXY_TAG=762004a7338256f603697d740d067a93
+
+# Any other options, see "/usr/bin/mtproto-proxy --help" for complete list of options.
+# For example:
+# OTHER_OPTIONS=-D google.com,google.ru
+OTHER_OPTIONS=

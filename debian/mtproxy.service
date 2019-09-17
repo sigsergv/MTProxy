@@ -1,0 +1,13 @@
+[Unit]
+Description=MTProxy
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/lib/mtproxy
+EnvironmentFile=/etc/default/mtproxy
+ExecStart=/usr/bin/mtproto-proxy -u mtproxy -p ${LISTEN_PORT} --http-ports ${HTTP_PORTS} --mtproto-secret ${SECRET} --proxy-tag ${PROXY_TAG} --aes-pwd /var/lib/mtproxy/proxy-secret ${OTHER_OPTIONS} /var/lib/mtproxy/proxy-multi.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
