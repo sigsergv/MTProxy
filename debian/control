@@ -1,0 +1,12 @@
+Source: mtproxy
+Section: net
+Priority: optional
+Maintainer: Sergey Stolyarov <sergei@regolit.com>
+Build-Depends: dpkg-dev, make, debhelper (>= 9), build-essential, libssl-dev, zlib1g-dev
+Standards-Version: 3.9.1
+
+Package: mtproxy
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, xxd, curl
+Description: Simple MT-Proto proxy
+ Telegram proxy

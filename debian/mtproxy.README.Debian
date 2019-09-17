@@ -1,0 +1,13 @@
+Some additional notes before you start.
+
+Program options are set via its main configuration file "/etc/default/mtproxy", feel
+free to edit it.
+
+By default mtproxy service is disabled and won't run automatically. Use this command
+to enable auto-start:
+
+    systemctl enable mtproxy.service
+
+
+Also you can use program "/usr/bin/mtproxy-reinit" to update service configuration data,
+just run it from root user.

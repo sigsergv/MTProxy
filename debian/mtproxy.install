@@ -1,0 +1,2 @@
+objs/bin/mtproto-proxy usr/bin
+debian/mtproxy-reinit usr/bin

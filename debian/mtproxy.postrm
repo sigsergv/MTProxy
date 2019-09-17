@@ -1,0 +1,7 @@
+#!/bin/sh
+
+action="$1"
+
+if [ "$action" = purge ]; then
+	rm -f /var/lib/mtproxy/proxy-multi.conf /var/lib/mtproxy/proxy-secret
+fi

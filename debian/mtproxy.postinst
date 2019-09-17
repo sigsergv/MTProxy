@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+db_version 2.0
+
+action="$1"
+oldversion="$2"
+
+umask 022
+
+setup_mtproxy_user() {
+	if ! getent passwd mtproxy >/dev/null; then
+		adduser --quiet --system --no-create-home --home /run/mtproxy --shell /usr/sbin/nologin mtproxy
+	fi
+}
+
+setup_permissions() {
+	chown -R mtproxy:root /var/lib/mtproxy
+	chmod 0700 /var/lib/mtproxy
+}
+
+if [ "$action" = configure ]; then
+	setup_mtproxy_user
+	setup_permissions
+
+	/usr/bin/mtproxy-reinit
+fi
