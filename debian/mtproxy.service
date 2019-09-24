@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 WorkingDirectory=/var/lib/mtproxy
 EnvironmentFile=/etc/default/mtproxy
-ExecStart=/usr/bin/mtproto-proxy -u mtproxy -p $LOCAL_PORT --http-ports $HTTP_PORTS --mtproto-secret $SECRET $PROXY_TAG_OPTION --aes-pwd /var/lib/mtproxy/proxy-secret $OTHER_OPTIONS /var/lib/mtproxy/proxy-multi.conf
+ExecStart=/usr/bin/mtproto-proxy -u mtproxy --http-stats -p $LOCAL_PORT --http-ports $HTTP_PORTS --mtproto-secret $SECRET $PROXY_TAG_OPTION --aes-pwd /var/lib/mtproxy/proxy-secret $OTHER_OPTIONS /var/lib/mtproxy/proxy-multi.conf
 Restart=on-failure
 
 [Install]

@@ -1,6 +1,7 @@
 # Set mtproxy options here
 
-# listen port, single or range e.g.: 8001:8008
+# listen port on localhost, single or range e.g.: 8001:8008
+# could be used to access server stats: curl http://127.0.0.1/stats
 LOCAL_PORT=8888
 
 # comma-separated list of client (HTTP) ports to listen
