@@ -1,7 +1,7 @@
 # Set mtproxy options here
 
 # listen port, single or range e.g.: 8001:8008
-LISTEN_PORT=8888
+LOCAL_PORT=8888
 
 # comma-separated list of client (HTTP) ports to listen
 HTTP_PORTS=30443
