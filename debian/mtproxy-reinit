@@ -1,12 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 curl -s https://core.telegram.org/getProxySecret -o /var/lib/mtproxy/proxy-secret
 curl -s https://core.telegram.org/getProxyConfig -o /var/lib/mtproxy/proxy-multi.conf
 
 chown mtproxy:root /var/lib/mtproxy/proxy-secret /var/lib/mtproxy/proxy-multi.conf
 chmod 0400 /var/lib/mtproxy/proxy-secret /var/lib/mtproxy/proxy-multi.conf
-
-# generate initial secret
-SECRET=$(head -c 16 /dev/urandom | xxd -ps)
-
-sed -i -e 's!SECRET=dead3ec4et!SECRET='${SECRET}'!g' /etc/default/mtproxy

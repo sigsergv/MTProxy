@@ -1,13 +1,35 @@
-Some additional notes before you start.
+# Configuration
 
-Program options are set via its main configuration file "/etc/default/mtproxy", feel
-free to edit it.
+Edit configuration file `/etc/default/mtproxy` and change settings you want. This file is updated during
+postinstall phase so you don't required to change option `SECRET` as it's randomly generated. Main option you should
+look at is `HTTP_PORTS` - list of ports telegram clients connect to, default value is 30433.
 
-By default mtproxy service is disabled and won't run automatically. Use this command
-to enable auto-start:
+Construct URL to the proxy config using this scheme: `tg://proxy?server=SERVER_ADDRESS&port=PORT&secret=SECRET`
 
-    systemctl enable mtproxy.service
+# Service/operations
 
+Manual start:
 
-Also you can use program "/usr/bin/mtproxy-reinit" to update service configuration data,
-just run it from root user.
+~~~~
+sudo systemctl start mtproxy.service
+~~~~
+
+Service status:
+
+~~~~
+sudo systemctl status mtproxy.service
+~~~~
+
+Re-download additional configuration data (you need to do this
+periodically):
+
+~~~~
+/usr/lib/mtproxy/mtproxy-reinit
+~~~~
+
+To enable service autostart on boot use this command (service is not set
+to autoload by default):
+
+~~~~~
+sudo systemctl enable mtproxy.service
+~~~~~
