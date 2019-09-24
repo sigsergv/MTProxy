@@ -21,9 +21,15 @@ setup_permissions() {
 	chmod 0700 /var/lib/mtproxy
 }
 
+generate_random_secret() {
+    local secret=$(head -c 16 /dev/urandom | xxd -ps)
+
+    sed -i -e 's!SECRET=dead3ec4et!SECRET='${secret}'!g' /etc/default/mtproxy
+}
+
 if [ "$action" = configure ]; then
 	setup_mtproxy_user
 	setup_permissions
-
-	/usr/bin/mtproxy-reinit
+    generate_random_secret
+	/usr/lib/mtproxy/mtproxy-reinit
 fi

@@ -12,7 +12,8 @@ SECRET=dead3ec4et
 # Proxy tag, value 762004a7338256f603697d740d067a93 is randomly generated and not a valid tag.
 #
 # You must obtain correct proxy tag via Telegram bot @MTProxybot
-PROXY_TAG=762004a7338256f603697d740d067a93
+# PROXY_TAG_OPTION=--proxy-tag 762004a7338256f603697d740d067a93
+PROXY_TAG_OPTION=
 
 # Any other options, see "/usr/bin/mtproto-proxy --help" for complete list of options.
 # For example:
