@@ -6,6 +6,12 @@ look at is `HTTP_PORTS` - list of ports telegram clients connect to, default val
 
 Construct URL to the proxy config using this scheme: `tg://proxy?server=SERVER_ADDRESS&port=PORT&secret=SECRET`
 
+Also you can execute provided binary that will construct URL using data from the configration file:
+
+~~~~
+/usr/lib/mtproxy/mtproxy-gen-proxy-url
+~~~~
+
 # Service/operations
 
 Manual start:

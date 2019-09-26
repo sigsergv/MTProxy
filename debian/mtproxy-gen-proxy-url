@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+# smart parse of default config and generate PROXY connection URL
+
+import re
+import binascii
+
+CONFIG_FILE = '/etc/default/mtproxy'
+
+lines = [x.split('=', 1) for x in open(CONFIG_FILE).read().split('\n') if not x.startswith('#') and x!='']
+options = {k:v for k,v in lines}
+
+server = 'SERVER_IP'
+port = options.get('HTTP_PORTS').split(',')[0]
+secret = options['SECRET']
+
+# expand server name
+mo = re.search('--nat-info\\s*=?s*([^ :]+):([^ :]+)', options.get('OTHER_OPTIONS'))
+if mo is not None:
+    server = mo.group(2)
+
+# expand secret
+mo = re.search('(?:-D|--domain)\\s*([^ ]+)', options.get('OTHER_OPTIONS'))
+if mo is not None:
+    domain = [x.strip() for x in mo.group(1).split(',')][0]
+    b0 = 'ee'.encode('utf8')
+    b2 = binascii.hexlify(domain.encode('utf8'))
+else:
+    b0 = 'ee'.encode('utf8')
+    b2 = ''.encode('utf8')
+
+secret = b0 + secret.encode('utf8') + b2
+
+url = 'https://t.me/proxy?server={server}&port={port}&secret={secret}'.format(
+    server = server,
+    port = port,
+    secret = secret.decode('utf8')
+    )
+
+print(url)

@@ -1,2 +1,3 @@
 objs/bin/mtproto-proxy usr/bin
 debian/mtproxy-reinit usr/lib/mtproxy
+debian/mtproxy-gen-proxy-url usr/lib/mtproxy

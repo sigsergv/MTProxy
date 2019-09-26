@@ -1,7 +1,7 @@
 # Set mtproxy options here
 
-# listen port on localhost, single or range e.g.: 8001:8008
-# could be used to access server stats: curl http://127.0.0.1/stats
+# listen port (pn localhost), single or range e.g.: 8001:8008
+# could be used to access server stats: curl http://127.0.0.1:8888/stats
 LOCAL_PORT=8888
 
 # comma-separated list of client (HTTP) ports to listen
@@ -18,5 +18,7 @@ PROXY_TAG_OPTION=
 
 # Any other options, see "/usr/bin/mtproto-proxy --help" for complete list of options.
 # For example:
-# OTHER_OPTIONS=-D google.com,google.ru
+# OTHER_OPTIONS=--domain google.com --nat-info=local-addr:global-addr
+# Option -D enables Fake-TLS for the specified fomain
+# Option --nat-info is required if your server hosted behind NAT and its IP address differ from external address
 OTHER_OPTIONS=
