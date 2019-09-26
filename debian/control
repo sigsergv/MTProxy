@@ -7,6 +7,6 @@ Standards-Version: 3.9.1
 
 Package: mtproxy
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, xxd, curl
+Depends: ${shlibs:Depends}, ${misc:Depends}, xxd, curl, python
 Description: Simple MT-Proto proxy
  Telegram proxy
