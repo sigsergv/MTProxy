@@ -1,3 +1,9 @@
+mtproxy (1.2-1) unstable; urgency=medium
+
+  * updated upstream, dc0c7f3de40530053189c572936ae4fd1567269b
+
+ -- Sergey Stolyarov <sergei@regolit.com>  Mon, 02 Nov 2020 09:30:48 +0700
+
 mtproxy (1.1-1) unstable; urgency=medium
 
   Some fixes and improvements
