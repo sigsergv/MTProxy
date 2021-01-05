@@ -23,5 +23,13 @@ rebased on master.
 To add upstream remote, use this command:
 
 ~~~~~
-git remote add upstream https://github.com/TelegramMessenger/MTProxy.git 
+git remote add upstream https://github.com/TelegramMessenger/MTProxy.git
+git fetch upstream/master
+~~~~~
+
+To update master branch with upstream master use command:
+
+~~~~~
+git checkout master
+git rebase upstream master
 ~~~~~
